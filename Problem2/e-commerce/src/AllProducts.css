@@ -1,0 +1,21 @@
+/* const useStyles = makeStyles({
+    filters: {
+      display: 'flex',
+      justifyContent: 'space-around',
+      margin: '20px 0',
+    },
+    productList: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+    },
+    productCard: {
+      margin: '10px',
+    },
+  });
+  
+  const AllProducts = () => {
+    const classes = useStyles();
+    // Component logic
+  };
+   */

@@ -1,0 +1,61 @@
+import React from 'react';
+import { TextField, MenuItem } from '@mui/material';
+
+const Filters = ({ filters, setFilters }) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [name]: value,
+    }));
+  };
+
+  return (
+    <div style={{ display: 'flex', justifyContent: 'space-around', margin: '20px 0' }}>
+      <TextField
+        label="Company"
+        select
+        name="company"
+        value={filters.company}
+        onChange={handleChange}
+        style={{ width: '15%' }}
+      >
+        <MenuItem value="AMZ">Amazon</MenuItem>
+        <MenuItem value="FLP">Flipkart</MenuItem>
+        <MenuItem value="SNP">Snapdeal</MenuItem>
+        <MenuItem value="MYN">Myntra</MenuItem>
+        <MenuItem value="AZO">Alibaba</MenuItem>
+      </TextField>
+      <TextField
+        label="Category"
+        select
+        name="category"
+        value={filters.category}
+        onChange={handleChange}
+        style={{ width: '15%' }}
+      >
+        <MenuItem value="Laptop">Laptop</MenuItem>
+        <MenuItem value="Phone">Phone</MenuItem>
+        {/* Add other categories as needed */}
+      </TextField>
+      <TextField
+        label="Min Price"
+        type="number"
+        name="minPrice"
+        value={filters.minPrice}
+        onChange={handleChange}
+        style={{ width: '15%' }}
+      />
+      <TextField
+        label="Max Price"
+        type="number"
+        name="maxPrice"
+        value={filters.maxPrice}
+        onChange={handleChange}
+        style={{ width: '15%' }}
+      />
+    </div>
+  );
+};
+
+export default Filters;
